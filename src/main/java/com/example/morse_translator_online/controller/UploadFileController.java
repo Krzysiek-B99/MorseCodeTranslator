@@ -45,9 +45,9 @@ public class UploadFileController {
             catch (IOException e){
                 return ResponseEntity.ok().build();
             }
-            FileWriter fileWriter = new FileWriter("D:\\JAVA_projects\\morse_translator_online\\src\\main\\resources\\output.txt");
+            FileWriter fileWriter = new FileWriter("D:\\JAVA_projects\\morse_translator_online\\src\\main\\resources\\templates\\output.txt");
             PrintWriter printWriter = new PrintWriter(fileWriter);
-            printWriter.print(morseTranslatorService.morseConvert(Paths.get("D:\\JAVA_projects\\morse_translator_online\\src\\main\\resources\\input.txt"),1)); //1:en->morse   else    morse->en
+            printWriter.print(morseTranslatorService.morseConvert(Paths.get("D:\\JAVA_projects\\morse_translator_online\\src\\main\\resources\\templates\\input.txt"),1)); //1:en->morse   else    morse->en
             printWriter.close();
         } catch (IOException e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();

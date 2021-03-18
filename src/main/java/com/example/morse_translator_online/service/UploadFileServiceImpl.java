@@ -18,6 +18,6 @@ public class UploadFileServiceImpl implements UploadFileService {
     @Override
     public void uploadFile(MultipartFile multipartFile) throws IOException{
         String fileName = multipartFile.getOriginalFilename();
-        multipartFile.transferTo(new File("D:\\JAVA_projects\\morse_translator_online\\src\\main\\resources\\input\\input.txt"));
+        multipartFile.transferTo(new File("D:\\JAVA_projects\\morse_translator_online\\src\\main\\resources\\input.txt"));
     }
 }

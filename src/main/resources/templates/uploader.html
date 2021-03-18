@@ -1,0 +1,24 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Morse translator</title>
+</head>
+<body>
+
+<input id="fileupload" type="file" name="fileupload"/>
+<button id="upload-button" onclick="uploadFile()"> Upload</button>
+<script>
+    async function uploadFile() {
+        let formData = new FormData();
+        formData.append("file",fileupload.files[0]);
+        let response = await  fetch('/file',{
+            method: "POST",
+            body: formData
+        });
+        if(response.status===200){
+            alert("File successfully uploaded")
+        }
+    }
+
+</script>
+</body>
+</html>
